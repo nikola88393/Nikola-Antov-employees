@@ -50,8 +50,13 @@ function readFile() {
             }
 
             let result = findPair(objContainer);
-            console.log(result)
-            populateDOM(result);
+
+            if (result.length !== 0) {
+                populateDOM(result);
+            }
+            else {
+                alert("Invalid input data. Choose another file and try again.");
+            }
         }
     }
 
@@ -95,10 +100,8 @@ function findPair(data) {
 }
 
 function populateDOM(result) {
-    let h1 = document.getElementById('tableH1');
-    h1.innerHTML = 'Resulting table';
-
     let container = document.getElementById('table');
+    container.innerHTML = '';
 
     let tbl = document.createElement('table');
     let body = document.createElement('tbody');
@@ -121,7 +124,6 @@ function populateDOM(result) {
     row.appendChild(cellDuration);
 
     body.appendChild(row);
-
 
     for (let j = 0; j < result.length; j += 2) {
         let row = document.createElement('tr');

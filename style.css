@@ -60,12 +60,10 @@ button,
 input[type=file]::file-selector-button {
     transition: 0.2s;
     border: 2px solid var(--blue);
-    /* font-size: 1em; */
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     background-color: var(--blue);
     color: var(--boxBackground);
-    font-weight: 600;
 }
 
 button:hover,
